@@ -8,14 +8,15 @@ $data = json_decode(file_get_contents("php://input"));
 
 switch ($metodo){
     case 'GET':
-        $sql = "SELECT nome,descricao,exemplos,categoria from termos";
+        $categoria = $_GET['categoria'];
+        $sql = "SELECT t.id,t.nome,t.descricao,t.exemplos,t.categoria,u.nome as nome_criador from termos as t inner join usuarios as u on t.id_usuario = u.id where categoria = '$categoria'";
         $res = $mysqli->query($sql);
         $termos = $res->fetch_all(MYSQLI_ASSOC);
         echo json_encode(["mensagem" => "Busca Realizada!", "data" => $termos]);
         break;
     case 'POST':
         if(!empty($data->id_usuario) && !empty($data->nome) && !empty($data->descricao) && !empty($data->exemplo) &&!empty($data->categoria)){
-            if($data->categoria == "Matematica" || $data->categoria == "Portugues"){
+            if($data->categoria == "Matemática" || $data->categoria == "Português"){
                 $sql = "INSERT into termos (id_usuario,nome,descricao,exemplos,categoria) values ($data->id_usuario,'$data->nome','$data->descricao','$data->exemplo','$data->categoria')";
                 $res = $mysqli->query($sql);
                 echo json_encode(["mensagem" => "Termo Adicionado com sucesso!"]);

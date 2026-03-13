@@ -13,7 +13,7 @@ if(!empty($nome) && !empty($senha)){
     $quantidade = $res->num_rows;
     if($quantidade == 1){
         $usuario = $res->fetch_assoc();
-        echo json_encode(["mensagem" => "Login efetuado com sucesso!", 'id_usuario' => $usuario['id']]);
+        echo json_encode(["mensagem" => "Login efetuado com sucesso!", 'id_usuario' => $usuario['id'], 'perfil' => $usuario['perfil']]);
     } else{
         echo json_encode(["mensagem" => "Usuario não encontrado!"]);
     }
