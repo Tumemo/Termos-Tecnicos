@@ -22,20 +22,20 @@ function Dashboard(){
     },[])
     return(
         <main>
-            <div className="w-full bg-primary h-15 flex justify-between items-center px-10 text-black">
-                <h2 className="text-3xl">Termos</h2>
+            <div className="w-full h-15 flex justify-between items-center px-10 text-black bg-indigo-600">
+                <h2 className="text-3xl font-bold text-white">Termos</h2>
                 <div className="flex gap-5">
                     <ul className="flex items-center gap-5">
-                        <li onClick={()=> setCategoria("Matematica")} className="cursor-pointer">Matemática</li>
-                        <li onClick={()=> setCategoria("Portugues")} className="cursor-pointer">Português</li>
+                        <li onClick={()=> setCategoria("Matematica")} className="cursor-pointer text-white">Matemática</li>
+                        <li onClick={()=> setCategoria("Portugues")} className="cursor-pointer text-white">Português</li>
                     </ul>
-                    <Button variant={'secondary'} onClick={() => Deslogar()}>Deslogar</Button>
+                    <Button onClick={() => Deslogar()} className="bg-white hover:bg-gray-400">Deslogar</Button>
                 </div>
             </div>
                 {categoria == "Matematica" ? 
                 <section className="w-[90%] m-auto">
                     <div className="flex justify-between items-center">
-                        <h2 className="text-2xl my-4">Termos Técnicos de Matemática</h2>
+                        <h2 className="text-3xl my-4">Termos Técnicos de Matemática</h2>
                         <Modal/>
                     </div>
                     <TabelaMatematica />
@@ -43,7 +43,7 @@ function Dashboard(){
                 : 
                 <section className="w-[90%] m-auto">
                     <div className="flex justify-between items-center">
-                        <h2 className="text-2xl my-4">Termos Técnicos de Português</h2>
+                        <h2 className="text-3xl my-4">Termos Técnicos de Português</h2>
                         <Modal/>
                     </div>
                     <TabelaPortugues />

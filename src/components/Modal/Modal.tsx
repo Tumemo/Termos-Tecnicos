@@ -28,7 +28,7 @@ function Modal(){
     }
     return(
         <Dialog>
-            <DialogTrigger asChild><Button><PlusCircle/>Novo Termo</Button></DialogTrigger>
+            <DialogTrigger asChild><Button className="bg-indigo-600 hover:bg-indigo-700 text-white"><PlusCircle/>Novo Termo</Button></DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Adicionar Novo termo</DialogTitle>
