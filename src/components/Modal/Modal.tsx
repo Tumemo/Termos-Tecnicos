@@ -16,7 +16,7 @@ function Modal(){
 
     async function AdicionarTermo(evento:React.SubmitEvent<HTMLFormElement>){
         evento.preventDefault()
-        await axios.post("http://localhost/termostecnicos/api/termos.php",{
+        await axios.post("http://10.141.117.12/termostecnicos/api/termos.php",{
             id_usuario: sessionStorage.getItem('id_usuario'),
             nome:nome,
             descricao:descricao,

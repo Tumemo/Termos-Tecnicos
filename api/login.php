@@ -18,5 +18,5 @@ if(!empty($nome) && !empty($senha)){
         echo json_encode(["mensagem" => "Usuario não encontrado!"]);
     }
 } else {
-    json_encode(["mensagem" => "Dados incompletos!"]);
+    echo json_encode(["mensagem" => "Dados incompletos!"]);
 }

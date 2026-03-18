@@ -18,7 +18,7 @@ function TabelaPortugues(){
     const [busca,setBusca] = useState("")
     const permissao = sessionStorage.getItem('perfil') == "Aluno" ? false : true
     async function CarregarTermos(){
-        await axios.get("http://localhost/termostecnicos/api/termos.php",{
+        await axios.get("http://10.141.117.12/termostecnicos/api/termos.php",{
             params:{
                 categoria: "Portugues"
             }
@@ -36,7 +36,7 @@ function TabelaPortugues(){
     async function removerTermo(id: number) {
         if (confirm("Tem certeza que deseja remover este termo?")) {
             try {
-                await axios.delete("http://localhost/termostecnicos/api/termos.php",{
+                await axios.delete("http://10.141.117.12/termostecnicos/api/termos.php",{
                     data:{
                         id:id
                     }

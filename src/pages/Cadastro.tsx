@@ -13,7 +13,7 @@ function Cadastro(){
 
     async function Cadastrar(evento: React.SubmitEvent<HTMLFormElement>){
         evento.preventDefault()
-        await axios.post("http://localhost/termostecnicos/api/login.php",{
+        await axios.post("http://10.141.117.12/termostecnicos/api/cadastro.php",{
             nome:nome.toLowerCase(),
             senha:senha
         })
